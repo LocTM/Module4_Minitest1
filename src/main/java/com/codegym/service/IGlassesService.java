@@ -7,7 +7,7 @@ import java.util.List;
 public interface IGlassesService {
     List<Glasses> findAll();
 
-    void save(Glasses customer);
+    void save(Glasses glasses);
 
     Glasses findById(int id);
 
