@@ -3,47 +3,46 @@
 <head th:replace="/layout :: head">
     <title>ListGlasses</title>
 </head>
-<body>
-<h3>Glasses</h3>
-<p>
-    <a th:href="@{/glasses/create}">
-        Add new glass
-    </a>
-</p>
+<body class="bg-light">
+<div class="container py-4">
+    <h3 class="mb-4">Glasses</h3>
+    <p>
+        <a class="btn btn-primary" th:href="@{/glasses/create}">
+            Add new glass
+        </a>
+    </p>
 
-<div class="notify">
-    <div th:if="${success}">
+    <div class="alert alert-success mt-3" th:if="${success}">
         <span th:text="${success}"></span>
     </div>
-</div>
 
-<table id = "glasses">
-    <thead>
-    <tr>
-<!--        (id, code, price, color, description, img)-->
-        <th>Code</th>
-        <th>Price</th>
-        <th>Color</th>
-        <th>Description</th>
-        <th>IMG</th>
-        <th>Edit</th>
-        <th>Delete</th>
-        <th>View</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="row,rowStat : ${glasses}">
-        <td th:text="${row.getCode()}"></td>
-        <td th:text="${row.getPrice()}"></td>
-        <td th:text="${row.getColor()}"></td>
-        <td th:text="${row.getDescription()}"></td>
-        <td><img th:src="@{'/i/'+${row.getImg()}}"></td>
-        <td><a th:href="@{/glasses/{id}/edit(id=${row.getId()})}">edit</a></td>
-        <td><a th:href="@{/glasses/{id}/delete(id=${row.getId()})}">delete</a></td>
-        <td><a th:href="@{/glasses/{id}/view(id=${row.getId()})}">view</a></td>
-    </tr>
-    </tbody>
-</table>
+    <table class="table table-striped" id="glasses">
+        <thead>
+        <tr>
+            <th>Code</th>
+            <th>Price</th>
+            <th>Color</th>
+            <th>Description</th>
+            <th>IMG</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>View</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="row,rowStat : ${glasses}">
+            <td th:text="${row.getCode()}"></td>
+            <td th:text="${row.getPrice()}"></td>
+            <td th:text="${row.getColor()}"></td>
+            <td th:text="${row.getDescription()}"></td>
+            <td><img class="img-fluid" th:src="@{'/i/'+${row.getImg()}}" width="100"></td>
+            <td><a class="btn btn-primary" th:href="@{/glasses/{id}/edit(id=${row.getId()})}">Edit</a></td>
+            <td><a class="btn btn-danger" th:href="@{/glasses/{id}/delete(id=${row.getId()})}">Delete</a></td>
+            <td><a class="btn btn-secondary" th:href="@{/glasses/{id}/view(id=${row.getId()})}">View</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 <footer th:replace="/layout :: footer"></footer>
 </body>
 </html>
