@@ -1,5 +1,7 @@
 package com.codegym.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 
 
@@ -11,7 +13,7 @@ public class GlassesForm {
     private String price;
     private String color;
     private String description;
-    private String img;
+    private MultipartFile img;
 
     public GlassesForm() {
     }
