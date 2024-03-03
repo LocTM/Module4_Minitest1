@@ -1,6 +1,7 @@
 package com.codegym.configuration;
 
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,8 @@ import org.thymeleaf.templatemode.TemplateMode;
 @ComponentScan(basePackages = "com.codegym")
 @PropertySource("classpath:upload_file.properties")
 public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAware {
+    @Value("${upload}")
+    private String upload;
     private ApplicationContext applicationContext;
 
     @Override
