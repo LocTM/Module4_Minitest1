@@ -4,6 +4,7 @@ import com.codegym.model.Glasses;
 import com.codegym.model.GlassesForm;
 import com.codegym.service.IGlassesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,10 @@ import java.util.List;
 @PropertySource("classpath:upload_file.properties")
 
 public class GlassesController {
+
+    @Value("${upload}")
+    private String upload;
+
     @Autowired
     private IGlassesService glassesService;
 
