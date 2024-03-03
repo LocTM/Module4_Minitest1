@@ -1,6 +1,7 @@
 package com.codegym.controller;
 
 import com.codegym.model.Glasses;
+import com.codegym.model.GlassesForm;
 import com.codegym.service.IGlassesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,13 +29,14 @@ public class GlassesController {
 
     @GetMapping("/create")
     public String create(Model model) {
-        model.addAttribute("glasses", new Glasses());
+        model.addAttribute("glasses", new GlassesForm());
         return "/create";
     }
 
     @PostMapping("/save")
-    public String save(Glasses glasses) {
-        glassesService.save(glasses);
+    public String save(GlassesForm glasses) {
+        GlassesForm glasses1 = glasses;
+//        glassesService.save(glasses);
         return "redirect:/glasses";
     }
 
