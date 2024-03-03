@@ -2,8 +2,7 @@ package com.codegym.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table (name = "Glasses")
+
 public class GlassesForm {
 //    Glasses (id, code, price, color, description, img)
 @Id
