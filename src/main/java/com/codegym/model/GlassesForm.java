@@ -15,17 +15,7 @@ public class GlassesForm {
     private String description;
     private MultipartFile img;
 
-    public GlassesForm() {
-    }
 
-    public GlassesForm(int id, String code, String price, String color, String description, String img) {
-        this.id = id;
-        this.code = code;
-        this.price = price;
-        this.color = color;
-        this.description = description;
-        this.img = img;
-    }
 
     public int getId() {
         return id;
@@ -67,11 +57,5 @@ public class GlassesForm {
         this.description = description;
     }
 
-    public String getImg() {
-        return img;
-    }
 
-    public void setImg(String img) {
-        this.img = img;
-    }
 }
