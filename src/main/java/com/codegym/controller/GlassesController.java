@@ -8,12 +8,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -42,9 +46,22 @@ public class GlassesController {
     }
 
     @PostMapping("/save")
-    public String save(GlassesForm glassesForm) {
-//        GlassesForm glasses1 = glasses;
-//        glassesService.save(glasses);
+    public String save(GlassesForm glassesForm) throws IOException {
+        //tai file len
+        //lay file
+        MultipartFile file = glassesForm.getImg();
+        //lay ten
+        String nameImg = file.getOriginalFilename();
+        //copy file vao trong thu muc
+        FileCopyUtils.copy(file.getBytes(), new File(upload+nameImg));
+        // luu du lieu vao trong db
+        Glasses glasses = new Glasses();
+        glasses.setCode(glassesForm.getCode());
+        glasses.setDescription(glassesForm.getDescription());
+        glasses.setPrice(glassesForm.getPrice());
+        glasses.setColor(glassesForm.getColor());
+        glasses.setImg(nameImg);
+        glassesService.save(glasses);
         return "redirect:/glasses";
     }
 

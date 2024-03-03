@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="079e1200-e753-4d07-803d-a5b08e8c999b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/controller/GlassesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/controller/GlassesController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +200,7 @@
       <workItem from="1709396960689" duration="8257000" />
       <workItem from="1709470058263" duration="407000" />
       <workItem from="1709470612622" duration="588000" />
-      <workItem from="1709471261797" duration="4136000" />
+      <workItem from="1709471261797" duration="4742000" />
     </task>
     <servers />
   </component>
