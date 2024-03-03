@@ -16,16 +16,24 @@
 </p>
 <div id="detail">
     <div class="glasses-detail">
-        <label>Name:</label>
-        <label th:text="${glasses.name}"></label>
+        <label>Code:</label>
+        <label th:text="${glasses.code}"></label>
     </div>
     <div class="glasses-detail">
-        <label>Email:</label>
-        <label th:text="${glasses.email}"></label>
+        <label>Price:</label>
+        <label th:text="${glasses.price}"></label>
     </div>
     <div class="glasses-detail">
-        <label>Address:</label>
-        <label th:text="${glasses.address}"></label>
+        <label>Color:</label>
+        <label th:text="${glasses.color}"></label>
+    </div>
+    <div class="glasses-detail">
+        <label>Description:</label>
+        <label th:text="${glasses.description}"></label>
+    </div>
+    <div class="glasses-detail">
+        <label>IMG:</label>
+        <label th:text="${glasses.img}"></label>
     </div>
 </div>
 <footer th:replace="/layout :: footer"></footer>
