@@ -5,8 +5,7 @@ import javax.persistence.*;
 
 public class GlassesForm {
 //    Glasses (id, code, price, color, description, img)
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id;
     private String code;
     private String price;
