@@ -37,7 +37,7 @@
         <td th:text="${row.getPrice()}"></td>
         <td th:text="${row.getColor()}"></td>
         <td th:text="${row.getDescription()}"></td>
-        <td th:text="${row.getImg()}"></td>
+        <td><img th:src="@{'/i/'+${row.getImg()}}"></td>
         <td><a th:href="@{/glasses/{id}/edit(id=${row.getId()})}">edit</a></td>
         <td><a th:href="@{/glasses/{id}/delete(id=${row.getId()})}">delete</a></td>
         <td><a th:href="@{/glasses/{id}/view(id=${row.getId()})}">view</a></td>
