@@ -4,6 +4,7 @@ import com.codegym.model.Glasses;
 import com.codegym.model.GlassesForm;
 import com.codegym.service.IGlassesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,8 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/glasses")
+@PropertySource("classpath:upload_file.properties")
+
 public class GlassesController {
     @Autowired
     private IGlassesService glassesService;
@@ -34,8 +37,8 @@ public class GlassesController {
     }
 
     @PostMapping("/save")
-    public String save(GlassesForm glasses) {
-        GlassesForm glasses1 = glasses;
+    public String save(GlassesForm glassesForm) {
+//        GlassesForm glasses1 = glasses;
 //        glassesService.save(glasses);
         return "redirect:/glasses";
     }
