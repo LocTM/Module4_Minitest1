@@ -8,6 +8,26 @@ import javax.persistence.*;
 public class GlassesForm {
 //    Glasses (id, code, price, color, description, img)
 
+    public GlassesForm() {
+    }
+
+    public GlassesForm(int id, String code, String price, String color, String description, MultipartFile img) {
+        this.id = id;
+        this.code = code;
+        this.price = price;
+        this.color = color;
+        this.description = description;
+        this.img = img;
+    }
+
+    public MultipartFile getImg() {
+        return img;
+    }
+
+    public void setImg(MultipartFile img) {
+        this.img = img;
+    }
+
     private int id;
     private String code;
     private String price;
