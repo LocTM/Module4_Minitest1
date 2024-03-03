@@ -8,24 +8,24 @@
         <title>DetailCustomer</title>
 </head>
 <body>
-<h3>View Customer</h3>
+<h3>View Glasses</h3>
 <p>
-    <a th:href="@{/customers}">
-        Back to customer list
+    <a th:href="@{/glasses}">
+        Back to glasses list
     </a>
 </p>
 <div id="detail">
-    <div class="cus-detail">
+    <div class="glasses-detail">
         <label>Name:</label>
-        <label th:text="${customer.name}"></label>
+        <label th:text="${glasses.name}"></label>
     </div>
-    <div class="cus-detail">
+    <div class="glasses-detail">
         <label>Email:</label>
-        <label th:text="${customer.email}"></label>
+        <label th:text="${glasses.email}"></label>
     </div>
-    <div class="cus-detail">
+    <div class="glasses-detail">
         <label>Address:</label>
-        <label th:text="${customer.address}"></label>
+        <label th:text="${glasses.address}"></label>
     </div>
 </div>
 <footer th:replace="/layout :: footer"></footer>

@@ -6,12 +6,12 @@
 <body>
 <h3>Edit Customer</h3>
 <p>
-    <a th:href="@{/customers}">
+    <a th:href="@{/glasses}">
         Back to customer list
     </a>
 </p>
 <div id="form">
-    <form action="#" th:action="@{/customers/update}" th:object="${customer}"
+    <form action="#" th:action="@{/glasses/update}" th:object="${glasses}"
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>
